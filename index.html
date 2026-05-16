@@ -791,14 +791,14 @@ const CATEGORIES = [
   {
     id: 'exp', label: '経験値・成長', icon: '📈',
     params: [
-      { key: 'ExpRatio', label: '覚醒度XP倍率', desc: '覚醒度(レベル)経験値全般の倍率。大きい=早く強くなる', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1 },
-      { key: 'ChengZhangExpRatio', label: 'キャラクターXP倍率', desc: 'キャラクター成長経験値の倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1 },
-      { key: 'MJExpRatio', label: 'マスクXP倍率', desc: 'マスク(秘技習得用)経験値の倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1 },
-      { key: 'ShuLianDuExpRatio', label: '熟練度XP倍率', desc: '武器/技能の熟練度経験値の倍率', tip: '高倍率(10前後)で熟練解放を加速可', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1 },
-      { key: 'CaiJiExpRatio', label: '採集XP倍率', desc: '採集行為で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'ZhiZuoExpRatio', label: '製作XP倍率', desc: 'アイテム製作で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'ShaGuaiExpRatio', label: '討伐XP倍率', desc: 'モンスター討伐で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'QiTaExpRatio', label: 'その他XP倍率', desc: '上記以外の経験値倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
+      { key: 'ExpRatio', label: '覚醒度XP倍率', desc: '覚醒度(レベル)経験値全般の倍率。大きい=早く強くなる', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'ChengZhangExpRatio', label: 'キャラクターXP倍率', desc: 'キャラクター成長経験値の倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'MJExpRatio', label: 'マスクXP倍率', desc: 'マスク(秘技習得用)経験値の倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'ShuLianDuExpRatio', label: '熟練度XP倍率', desc: '武器/技能の熟練度経験値の倍率', tip: '高倍率(10前後)で熟練解放を加速可', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'CaiJiExpRatio', label: '採集XP倍率', desc: '採集行為で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'ZhiZuoExpRatio', label: '製作XP倍率', desc: 'アイテム製作で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'ShaGuaiExpRatio', label: '討伐XP倍率', desc: 'モンスター討伐で得る経験値の倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'QiTaExpRatio', label: 'その他XP倍率', desc: '上記以外の経験値倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
       { key: 'TrainingExpRatio', label: '訓練場XP倍率', desc: '訓練場での部族員(配下)経験値倍率', tip: '最大100倍まで設定可', type: 'number', step: 0.1, min: 0.1, max: 100, def: 1 },
       { key: 'ShaGuaiExpShareRatio', label: '討伐XP共有係数', desc: '討伐XPがパーティ内で共有される係数', type: 'number', step: 0.05, min: 0, max: 1, def: 0.2 },
       { key: 'ChuZhanZuRenShaGuaiExpShareRatio', label: '出撃部族員への討伐XP共有係数', desc: '出撃中の部族員に共有される討伐XPの係数', type: 'number', step: 0.1, min: 0, max: 10, def: 1 },
@@ -808,17 +808,17 @@ const CATEGORIES = [
   {
     id: 'drop', label: 'ドロップ・採集', icon: '🎁',
     params: [
-      { key: 'CaiJiDiaoLuoRatio', label: '採集産出倍率', desc: '草・植物等の採集量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'FaMuDiaoLuoRatio', label: '伐採産出倍率', desc: '木材の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'CaiKuangDiaoLuoRatio', label: '採掘産出倍率', desc: '鉱石の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'DongWuShiTiDiaoLuoRatio', label: '動物解体産出倍率', desc: '動物解体時の通常素材獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'DongWuShiTiZhongYaoDiaoLuoRatio', label: '動物部位産出倍率', desc: '解体時のレア部位素材獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'CaiJiShengChanJianZhuDiaoLuoRatio', label: '自動生産施設の産出倍率', desc: '自動生産系建築物 (栽培箱等) からの産出量倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1 },
-      { key: 'PuTongRenDiaoLuoRatio', label: '通常蛮族ドロップ倍率', desc: '通常蛮族(NPC)撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'JingYingRenDiaoLuoRatio', label: 'エリート蛮族ドロップ倍率', desc: 'エリート蛮族撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'BossRenDiaoLuoRatio', label: 'ボスドロップ倍率', desc: 'ボス撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'ZuoWuDropRatio', label: '作物収穫倍率', desc: '農作物の収穫量倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1 },
-      { key: 'BaoXiangDropRatio', label: '宝箱ドロップ倍率', desc: '宝箱から出るアイテムの数量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
+      { key: 'CaiJiDiaoLuoRatio', label: '採集産出倍率', desc: '草・植物等の採集量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'FaMuDiaoLuoRatio', label: '伐採産出倍率', desc: '木材の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'CaiKuangDiaoLuoRatio', label: '採掘産出倍率', desc: '鉱石の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'DongWuShiTiDiaoLuoRatio', label: '動物解体産出倍率', desc: '動物解体時の通常素材獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'DongWuShiTiZhongYaoDiaoLuoRatio', label: '動物部位産出倍率', desc: '解体時のレア部位素材獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'CaiJiShengChanJianZhuDiaoLuoRatio', label: '自動生産施設の産出倍率', desc: '自動生産系建築物 (栽培箱等) からの産出量倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'PuTongRenDiaoLuoRatio', label: '通常蛮族ドロップ倍率', desc: '通常蛮族(NPC)撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'JingYingRenDiaoLuoRatio', label: 'エリート蛮族ドロップ倍率', desc: 'エリート蛮族撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'BossRenDiaoLuoRatio', label: 'ボスドロップ倍率', desc: 'ボス撃破時の獲得量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'ZuoWuDropRatio', label: '作物収穫倍率', desc: '農作物の収穫量倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'BaoXiangDropRatio', label: '宝箱ドロップ倍率', desc: '宝箱から出るアイテムの数量倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
       { key: 'BaoXiangDiaoLuoDengJi', label: '宝箱ドロップレベル', desc: '宝箱から出るアイテムの品質ランク (0=通常〜4=最高品質)', tip: '0〜4の5段階', type: 'number', step: 1, min: 0, max: 4, def: 0 },
       { key: 'TeShuDaoJuDropXiShuJiaChengKaiGuan', label: '特殊アイテム産出倍率ボーナス', desc: 'ON=特殊アイテムのドロップ確率にボーナス補正', type: 'switch', def: 0 },
       { key: 'NormalEquipDropRatioCorrection', label: '通常蛮族装備のドロップ率補正', desc: '通常蛮族からの装備ドロップ確率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
@@ -833,14 +833,14 @@ const CATEGORIES = [
     id: 'world', label: '時間・世界設定', icon: '🌍',
     params: [
       { key: 'GameWorldDayTimePortion', label: '昼間の割合', desc: '昼夜サイクルの昼の比率 (0=常に夜, 1=常に昼)', tip: 'デフォルト0.9=昼90%', type: 'number', step: 0.01, min: 0, max: 1, def: 0.9 },
-      { key: 'GameWorldTimePower', label: 'ゲーム内時間速度', desc: '実時間1時間あたりのゲーム内時間 (24=1日)', tip: 'デフォルト24', type: 'number', step: 0.1, min: 1, max: 48, def: 24 },
-      { key: 'ZhiBeiChongShengRatio', label: '植生再生速度倍率', desc: '伐採した木や草の再生速度 (大=速く再生)', type: 'number', step: 0.1, min: 0.1, max: 3, def: 1 },
-      { key: 'ZuoWuShengZhangRatio', label: '作物成長速度倍率', desc: '農作物の成長速度 (大=速く育つ)', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1 },
-      { key: 'FuHuaSpeed', label: '卵孵化速度倍率', desc: '卵の孵化速度 (大=速く孵化)', type: 'number', step: 0.1, min: 0, max: 10, def: 1 },
-      { key: 'DongWuShengZhangRatio', label: '動物成長速度倍率', desc: '動物の成長速度 (大=速く成長)', type: 'number', step: 0.1, min: 0, max: 100, def: 1 },
-      { key: 'FanZhiJianGeRatio', label: '繁殖間隔倍率', desc: '動物の繁殖間隔 (大=長くなる=効率低下)', tip: 'コミュニティでは 0.x 推奨多数', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'DongWuShengChanJianGeRatio', label: '動物生産間隔倍率', desc: '動物が成果物 (卵/乳/糞等) を出す間隔 (大=遅い)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'DongWuChanChuRatio', label: '動物産出量倍率', desc: '動物の成果物の量 (大=多く出る)', type: 'number', step: 0.1, min: 0, max: 3, def: 1 },
+      { key: 'GameWorldTimePower', label: 'ゲーム内時間速度', desc: '実時間1時間あたりのゲーム内時間 (24=1日)', tip: 'デフォルト24', type: 'number', step: 0.1, min: 1, max: 48, def: 24, pv: { '1': { max: 288 } } },
+      { key: 'ZhiBeiChongShengRatio', label: '植生再生速度倍率', desc: '伐採した木や草の再生速度 (大=速く再生)', type: 'number', step: 0.1, min: 0.1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'ZuoWuShengZhangRatio', label: '作物成長速度倍率', desc: '農作物の成長速度 (大=速く育つ)', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1, pv: { '1': { max: 1000 } } },
+      { key: 'FuHuaSpeed', label: '卵孵化速度倍率', desc: '卵の孵化速度 (大=速く孵化)', type: 'number', step: 0.1, min: 0, max: 10, def: 1, pv: { '1': { max: 1000 } } },
+      { key: 'DongWuShengZhangRatio', label: '動物成長速度倍率', desc: '動物の成長速度 (大=速く成長)', type: 'number', step: 0.1, min: 0, max: 100, def: 1, pv: { '1': { max: 1000 } } },
+      { key: 'FanZhiJianGeRatio', label: '繁殖間隔倍率', desc: '動物の繁殖間隔 (大=長くなる=効率低下)', tip: 'コミュニティでは 0.x 推奨多数', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'DongWuShengChanJianGeRatio', label: '動物生産間隔倍率', desc: '動物が成果物 (卵/乳/糞等) を出す間隔 (大=遅い)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'DongWuChanChuRatio', label: '動物産出量倍率', desc: '動物の成果物の量 (大=多く出る)', type: 'number', step: 0.1, min: 0, max: 3, def: 1, pv: { '1': { max: 10 } } },
     ]
   },
   {
@@ -849,13 +849,13 @@ const CATEGORIES = [
       { key: 'MaxLevel', label: '覚醒度(レベル)上限', desc: 'プレイヤーキャラの最大覚醒度(レベル)', tip: 'ゲーム上限60、これ以上は不可', type: 'number', step: 1, min: 1, max: 60, def: 60 },
       { key: 'RoleBagCapacity', label: 'キャラ所持バッグ容量', desc: 'プレイヤー所持スロット数 (サーバー再起動 or キャラ復活で反映)', tip: '推奨30〜150、256はUI崩れ報告あり', type: 'number', step: 1, min: 30, max: 256, def: 60 },
       { key: 'MaxFuZhongRatio', label: '最大積載重量倍率', desc: '所持できる重量の上限倍率 (サーバー再起動で反映)', type: 'number', step: 0.1, min: 1, max: 100, def: 1 },
-      { key: 'BeiDongYiJiShuXingRatio', label: 'Lvアップ時 自動付与ステータスポイント倍率', desc: 'プレイヤーがレベルアップ時に自動で配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 0, max: 3, def: 1 },
-      { key: 'ZhuDongYiJiShuXingRatio', label: 'Lvアップ時 振分可能ステータスポイント倍率', desc: 'プレイヤーがレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 0, max: 3, def: 1 },
-      { key: 'ErJiShuXingRatio', label: 'Lvアップ時 HP/ATK/DEF成長倍率', desc: 'プレイヤーがレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1 },
+      { key: 'BeiDongYiJiShuXingRatio', label: 'Lvアップ時 自動付与ステータスポイント倍率', desc: 'プレイヤーがレベルアップ時に自動で配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 0, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'ZhuDongYiJiShuXingRatio', label: 'Lvアップ時 振分可能ステータスポイント倍率', desc: 'プレイヤーがレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 0, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'ErJiShuXingRatio', label: 'Lvアップ時 HP/ATK/DEF成長倍率', desc: 'プレイヤーがレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1, pv: { '1': { max: 10 } } },
       { key: 'ShiWuXiaoHaoRatio', label: '食料消費倍率', desc: '空腹進行速度 (0=空腹にならない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'ShuiXiaoHaoRatio', label: '水消費倍率', desc: '喉の渇き進行速度 (0=渇かない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'QiXiXiaoHaoRatio', label: '酸素消費倍率(水中)', desc: '水中での呼吸ゲージの減り速度 (0=無限呼吸)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
-      { key: 'ShengMingHuiFuRatio', label: 'HP回復倍率', desc: 'HP自動回復速度 (大=速く回復)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
+      { key: 'ShengMingHuiFuRatio', label: 'HP回復倍率', desc: 'HP自動回復速度 (大=速く回復)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
       { key: 'TiLiHuiFuRatio', label: 'スタミナ回復倍率', desc: 'スタミナ回復速度 (大=速く回復)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
       { key: 'QiXiHuiFuRatio', label: '酸素回復倍率', desc: '水上に出た時の呼吸ゲージ回復速度 (大=速く回復)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
       { key: 'NaiJiuXiShu', label: '耐久消耗倍率', desc: '装備耐久が減る速さ (0=壊れない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
@@ -873,25 +873,25 @@ const CATEGORIES = [
   {
     id: 'follower', label: '配下設定', icon: '👥',
     params: [
-      { key: 'AddRenKeDuRatio', label: '蛮族テイミング速度倍率', desc: '蛮族(NPC)を捕獲してテイミング(懐柔)する速度倍率 (大=短時間で部族員化)', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1 },
-      { key: 'GeRenMaxZhaoMuCount', label: '個人募集上限 (互換モジュールLv1)', desc: '強互換マスクモジュールLv1で募集可能な部族員の上限', tip: 'デフォルト6', type: 'number', step: 1, min: 1, max: 10, def: 6 },
-      { key: 'GeRenMaxZhaoMuCount_Two', label: '個人募集上限 (互換モジュールLv2)', desc: '強互換マスクモジュールLv2で募集可能な部族員の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 20, def: 10 },
+      { key: 'AddRenKeDuRatio', label: '蛮族テイミング速度倍率', desc: '蛮族(NPC)を捕獲してテイミング(懐柔)する速度倍率 (大=短時間で部族員化)', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1, pv: { '1': { max: 1000 } } },
+      { key: 'GeRenMaxZhaoMuCount', label: '個人募集上限 (互換モジュールLv1)', desc: '強互換マスクモジュールLv1で募集可能な部族員の上限', tip: 'デフォルト6', type: 'number', step: 1, min: 1, max: 10, def: 6, pv: { '1': { max: 100 } } },
+      { key: 'GeRenMaxZhaoMuCount_Two', label: '個人募集上限 (互換モジュールLv2)', desc: '強互換マスクモジュールLv2で募集可能な部族員の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 20, def: 10, pv: { '1': { max: 200 } } },
       { key: 'GeRenMaxZhaoMuCount_Three', label: '個人募集上限 (互換モジュールLv3)', desc: '強互換マスクモジュールLv3で募集可能な部族員の上限', tip: 'デフォルト15', type: 'number', step: 1, min: 1, max: 1000, def: 15 },
       { key: 'GongHuiMaxZhaoMuCount', label: '部族(ギルド)募集上限', desc: '部族全体で募集可能な部族員の上限', type: 'number', step: 1, min: 1, max: 1000, def: 50 },
-      { key: 'MaRenBeiDongYiJiShuXingRatio', label: '部族員Lvアップ時 自動付与ステータスポイント倍率', desc: '部族員(蛮族)がレベルアップ時に自動配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'MaRenZhuDongYiJiShuXingRatio', label: '部族員Lvアップ時 振分可能ステータスポイント倍率', desc: '部族員(蛮族)がレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'MaRenErJiShuXingRatio', label: '部族員Lvアップ時 HP/ATK/DEF成長倍率', desc: '部族員(蛮族)がレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1 },
+      { key: 'MaRenBeiDongYiJiShuXingRatio', label: '部族員Lvアップ時 自動付与ステータスポイント倍率', desc: '部族員(蛮族)がレベルアップ時に自動配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'MaRenZhuDongYiJiShuXingRatio', label: '部族員Lvアップ時 振分可能ステータスポイント倍率', desc: '部族員(蛮族)がレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'MaRenErJiShuXingRatio', label: '部族員Lvアップ時 HP/ATK/DEF成長倍率', desc: '部族員(蛮族)がレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1, pv: { '1': { max: 10 } } },
       { key: 'ManRenPinZhiRatio', label: '野生蛮族の品質倍率', desc: '野生蛮族(NPC)生成時の品質補正倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'MaRenDamageRatio', label: '部族員ダメージ倍率', desc: '部族員の与ダメージ倍率', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1 },
-      { key: 'ManRenJianShangRatio', label: '部族員ダメージ軽減倍率', desc: '部族員の被ダメ軽減 (大=タフ)', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1 },
+      { key: 'MaRenDamageRatio', label: '部族員ダメージ倍率', desc: '部族員の与ダメージ倍率', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1, pv: { '1': { min: 0, max: 10 } } },
+      { key: 'ManRenJianShangRatio', label: '部族員ダメージ軽減倍率', desc: '部族員の被ダメ軽減 (大=タフ)', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1, pv: { '1': { min: 0, max: 10 } } },
       { key: 'ZhaoHuanDisRatio', label: '部族員召喚距離係数', desc: '部族員を召喚可能な最大距離の係数', type: 'number', step: 0.5, min: 1, max: 100, def: 1 },
       { key: 'ManRenChuZhanCount', label: '同時出撃部族員数', desc: '同時に連れていける部族員(蛮族)の数', tip: 'デフォルト3', type: 'number', step: 1, min: 1, max: 100, def: 3 },
-      { key: 'MaxConvertCount', label: '神秘的コンバーター最大設置数', desc: '神秘的コンバーターを設置できる最大数', tip: 'デフォルト3', type: 'number', step: 1, min: 1, max: 10, def: 3 },
-      { key: 'ChongsuRatio', label: 'キャラリモデル時間倍率', desc: 'キャラクターのリモデル(再造形)に必要な時間倍率', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1 },
+      { key: 'MaxConvertCount', label: '神秘的コンバーター最大設置数', desc: '神秘的コンバーターを設置できる最大数', tip: 'デフォルト3', type: 'number', step: 1, min: 1, max: 10, def: 3, pv: { '1': { max: 100 } } },
+      { key: 'ChongsuRatio', label: 'キャラリモデル時間倍率', desc: 'キャラクターのリモデル(再造形)に必要な時間倍率', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1, pv: { '1': { max: 100 } } },
       { key: 'ZuRenFuZhi', label: '部族員の複製を許可', desc: 'ON=部族員(配下)を複製可能にする', type: 'switch', def: 0 },
       { key: 'ZuRenDirectCunQu', label: '部族員リモートアクセス有効', desc: 'ON=遠隔から部族員のインベントリに直接アクセス可', type: 'switch', def: 0 },
-      { key: 'XinQingZengZhang', label: 'ムード(気分)上昇倍率', desc: '部族員のムード(気分)が上がる速度倍率 (大=機嫌を取りやすい)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'XinQingJianShao', label: 'ムード(気分)低下倍率', desc: '部族員のムードが下がる速度倍率 (低=反乱しにくい)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
+      { key: 'XinQingZengZhang', label: 'ムード(気分)上昇倍率', desc: '部族員のムード(気分)が上がる速度倍率 (大=機嫌を取りやすい)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'XinQingJianShao', label: 'ムード(気分)低下倍率', desc: '部族員のムードが下がる速度倍率 (低=反乱しにくい)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
       { key: 'ManRenTiLiDamageRatio', label: '蛮族へのSTA削り倍率', desc: '蛮族(部族員/NPC)のスタミナ(STA)を削るダメージ倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
       { key: 'ManRenTenacityDamageRatio', label: '蛮族への頑強(RESIL)削り倍率', desc: '蛮族の頑強(RESIL=怯み耐性)を削るダメージ倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
     ]
@@ -899,16 +899,16 @@ const CATEGORIES = [
   {
     id: 'animal', label: '動物設定', icon: '🐾',
     params: [
-      { key: 'GeRenMaxDongWuCount', label: '個人 動物数上限', desc: '個人が飼育できる動物数の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 100, def: 10 },
-      { key: 'GongHuiMaxDongWuCount', label: '部族 動物数上限', desc: '部族(ギルド)が飼育できる動物数の上限', type: 'number', step: 1, min: 1, max: 100, def: 50 },
+      { key: 'GeRenMaxDongWuCount', label: '個人 動物数上限', desc: '個人が飼育できる動物数の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 100, def: 10, pv: { '1': { max: 1000 } } },
+      { key: 'GongHuiMaxDongWuCount', label: '部族 動物数上限', desc: '部族(ギルド)が飼育できる動物数の上限', type: 'number', step: 1, min: 1, max: 100, def: 50, pv: { '1': { max: 1000 } } },
       { key: 'GeRenMaxSpecDongWuCount', label: '個人 巨象 最大数', desc: '個人が飼育できる特殊動物(巨象)の上限', tip: 'デフォルト1', type: 'number', step: 1, min: 1, max: 100, def: 1 },
       { key: 'GongHuiMaxSpecDongWuCount', label: '部族 巨象 最大数', desc: '部族(ギルド)が飼育できる特殊動物(巨象)の上限', tip: 'デフォルト2', type: 'number', step: 1, min: 1, max: 100, def: 2 },
-      { key: 'DongWuBeiDongYiJiShuXingRatio', label: '動物Lvアップ時 自動付与ステータスポイント倍率', desc: '動物がレベルアップ時に自動配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'DongWuZhuDongYiJiShuXingRatio', label: '動物Lvアップ時 振分可能ステータスポイント倍率', desc: '動物がレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1 },
-      { key: 'DongWuErJiShuXingRatio', label: '動物Lvアップ時 HP/ATK/DEF成長倍率', desc: '動物がレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1 },
+      { key: 'DongWuBeiDongYiJiShuXingRatio', label: '動物Lvアップ時 自動付与ステータスポイント倍率', desc: '動物がレベルアップ時に自動配分されるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'DongWuZhuDongYiJiShuXingRatio', label: '動物Lvアップ時 振分可能ステータスポイント倍率', desc: '動物がレベルアップ時に自由に振り分けられるステータスポイントの倍率', type: 'number', step: 0.1, min: 1, max: 3, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'DongWuErJiShuXingRatio', label: '動物Lvアップ時 HP/ATK/DEF成長倍率', desc: '動物がレベルアップ時に得るHP・攻撃力・防御力の上昇倍率', type: 'number', step: 0.1, min: 0.5, max: 3, def: 1, pv: { '1': { max: 10 } } },
       { key: 'DongWuPinZhiRatio', label: '野生動物の品質倍率', desc: '野生動物スポーン時の品質補正倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
-      { key: 'DongWuDamageRatio', label: '動物ダメージ倍率', desc: '動物の与ダメージ倍率', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1 },
-      { key: 'DongWuJianShangRatio', label: '動物ダメージ軽減倍率', desc: '動物の被ダメ軽減 (大=タフ)', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1 },
+      { key: 'DongWuDamageRatio', label: '動物ダメージ倍率', desc: '動物の与ダメージ倍率', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1, pv: { '1': { min: 0, max: 10 } } },
+      { key: 'DongWuJianShangRatio', label: '動物ダメージ軽減倍率', desc: '動物の被ダメ軽減 (大=タフ)', type: 'number', step: 0.1, min: 0.5, max: 2, def: 1, pv: { '1': { min: 0, max: 10 } } },
       { key: 'DongWuChuZhanCount', label: '同時出撃動物数', desc: '同時に連れていける動物の数', tip: 'デフォルト1', type: 'number', step: 1, min: 1, max: 100, def: 1 },
       { key: 'DongWuXiaoHaoShiWuRatio', label: '動物食料消費倍率', desc: '動物の食料消費速度 (0=飢えない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'DongWuXiaoHaoShuiRatio', label: '動物水消費倍率', desc: '動物の水消費速度 (0=渇かない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
@@ -935,7 +935,7 @@ const CATEGORIES = [
       { key: 'JianZhuChuanSongMenPlusKaiGuan', label: 'カスタム製ポータルでの資源転送を有効化', desc: 'ON=プレイヤーが建築したカスタムポータル経由で資源転送が可能になる', type: 'switch', def: 0 },
       { key: 'ProtectJianZhuInYingHuoSwitch', label: '焚き火範囲内建築のPVP保護', desc: 'ON=焚き火範囲内の建築をPVPダメージから保護', type: 'switch', def: 1 },
       { key: 'JianZhuMirageKaiGuan', label: '事前建築(プレビュー)機能を有効化', desc: 'ON=実際に建てる前に半透明の建築プレビューを表示', type: 'switch', def: 0 },
-      { key: 'MaxChuanSongMenNumber', label: 'ポータル最大設置数', desc: '配置可能なポータル建築の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 100, def: 10 },
+      { key: 'MaxChuanSongMenNumber', label: 'ポータル最大設置数', desc: '配置可能なポータル建築の上限', tip: 'デフォルト10', type: 'number', step: 1, min: 1, max: 100, def: 10, pv: { '1': { min: 10 } } },
       { key: 'MaxXiuMianCangCount', label: '休眠倉庫の最大設置数', desc: '配置可能な休眠倉庫の数', tip: 'デフォルト50', type: 'number', step: 1, min: 1, max: 100, def: 50 },
       { key: 'JianZhuZiYuanJinShuaBanJing', label: '建築資源スポーン範囲', desc: '建築物周辺で資源がスポーンする距離', tip: 'デフォルト1', type: 'number', step: 1, min: 0, max: 100, def: 1 },
       { key: 'PingTaiBuildRangeLimit', label: '巨象/船 建築範囲制限', desc: 'ON=巨象や船の上に建築できる範囲を制限', type: 'switch', def: 1 },
@@ -955,7 +955,7 @@ const CATEGORIES = [
   {
     id: 'guild', label: 'ギルド設定', icon: '🏰',
     params: [
-      { key: 'GongHuiMaxMember', label: '部族 最大メンバー数', desc: '1つの部族(ギルド)に所属できるプレイヤー数の上限', tip: 'デフォルト20', type: 'number', step: 1, min: 1, max: 100, def: 20 },
+      { key: 'GongHuiMaxMember', label: '部族 最大メンバー数', desc: '1つの部族(ギルド)に所属できるプレイヤー数の上限', tip: 'デフォルト20', type: 'number', step: 1, min: 1, max: 50, def: 20, pv: { '1': { max: 100 } } },
       { key: 'GongHuiBiaoJiMaxCount', label: '部族共有マーカー最大数', desc: '部族メンバー間で共有できるマップマーカー数', tip: 'デフォルト20', type: 'number', step: 1, min: 1, max: 100, def: 20 },
       { key: 'PVEOnlyTongGuiShuCanOpenKaiGuan', label: 'PVE: 死亡袋は本人/部族員のみ開封可', desc: 'ON=部族外プレイヤーは他人の死亡遺品袋を開けない', type: 'switch', def: 1 },
       { key: 'YunXuOtherDaKaiGongZuoTai', label: '他人の作業台の使用を許可', desc: 'ON=他プレイヤーの作業台を使用可能', type: 'switch', def: 0 },
@@ -1000,8 +1000,8 @@ const CATEGORIES = [
       { key: 'HuXIangShangHaiKaiGuan', label: 'PVP(プレイヤー間ダメージ)を有効化', desc: 'ON=プレイヤー同士のダメージが通る (PvP), OFF=PvE専用', type: 'switch', def: 1 },
       { key: 'YouFangShangHaiKaiGuan', label: '味方間ダメージを有効化', desc: 'ON=同部族の味方にもダメージが通る (フレンドリーファイア)', type: 'switch', def: 0 },
       { key: 'PlayerYouFangShangHaiKaiGuan', label: '味方プレイヤー間ダメージを有効化', desc: 'ON=味方プレイヤーにダメージが通る', type: 'switch', def: 0 },
-      { key: 'DamageYeShengRatio', label: '野生動物へのダメージ倍率', desc: 'プレイヤー→野生動物のダメ倍率', type: 'number', step: 0.1, min: 0.5, max: 5, def: 1 },
-      { key: 'BeDamageByYeShengRatio', label: '野生動物から受けるダメージ倍率', desc: '野生動物→プレイヤーのダメ倍率', type: 'number', step: 0.1, min: 0.2, max: 2, def: 1 },
+      { key: 'DamageYeShengRatio', label: '野生動物へのダメージ倍率', desc: 'プレイヤー→野生動物のダメ倍率', type: 'number', step: 0.1, min: 0.5, max: 5, def: 1, pv: { '1': { min: 0, max: 10 } } },
+      { key: 'BeDamageByYeShengRatio', label: '野生動物から受けるダメージ倍率', desc: '野生動物→プレイヤーのダメ倍率', type: 'number', step: 0.1, min: 0.2, max: 2, def: 1, pv: { '1': { min: 0, max: 10 } } },
       { key: 'WarKaiGuan', label: '戦争システム有効', desc: 'ON=バトルアリーナモード有効', type: 'switch', def: 0 },
       { key: 'AsiaWarTimeStart', label: 'アジア戦争開始時間', desc: '', type: 'text', def: '20:00' },
       { key: 'AsiaWarTimeEnd', label: 'アジア戦争終了時間', desc: '', type: 'text', def: '23:00' },
@@ -1026,18 +1026,18 @@ const CATEGORIES = [
   {
     id: 'craft', label: '製作・消耗', icon: '⚒️',
     params: [
-      { key: 'ZhiZuoTimeRatio', label: '製作スピード倍率', desc: 'アイテム製作の速度倍率 (大=速く完成)', tip: '上限1000まで設定可', type: 'number', step: 0.1, min: 0.1, max: 1000, def: 1 },
+      { key: 'ZhiZuoTimeRatio', label: '製作スピード倍率', desc: 'アイテム製作の速度倍率 (大=速く完成)', tip: 'プリセット1は上限1000', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 1000 } } },
       { key: 'RanLiaoXiaoHaoRatio', label: '燃料消費倍率', desc: '燃料の消費速度 (0=減らない)', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
-      { key: 'WuPinFuHuaiRatio', label: 'アイテム腐敗時間倍率', desc: 'アイテムが腐るまでに必要な時間の倍率 (大=長持ち, 小=速く腐る)', type: 'number', step: 0.1, min: 0, max: 100, def: 1 },
-      { key: 'WuPinXiaoHuiTime', label: 'デスパッケージ自動消滅時間倍率', desc: '死亡時に残るデスパッケージ(遺品袋)が自動消滅するまでの時間倍率 (大=長く残る)', type: 'number', step: 0.1, min: 0, max: 100, def: 1 },
-      { key: 'ConverPropsSpeedRatio', label: '神秘的コンバーター変換速度倍率', desc: '神秘的コンバーターのアイテム変換速度倍率', tip: 'デフォルト5', type: 'number', step: 0.5, min: 1, max: 100, def: 5 },
-      { key: 'ZiYuanShengMingRatio', label: '採集対象 HP 係数', desc: '岩・木など採集ノードの耐久値係数 (大=何度も叩く必要)', type: 'number', step: 0.1, min: 0.1, max: 10, def: 1 },
+      { key: 'WuPinFuHuaiRatio', label: 'アイテム腐敗時間倍率', desc: 'アイテムが腐るまでに必要な時間の倍率 (大=長持ち, 小=速く腐る)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'WuPinXiaoHuiTime', label: 'デスパッケージ自動消滅時間倍率', desc: '死亡時に残るデスパッケージ(遺品袋)が自動消滅するまでの時間倍率 (大=長く残る)', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'ConverPropsSpeedRatio', label: '神秘的コンバーター変換速度倍率', desc: '神秘的コンバーターのアイテム変換速度倍率', tip: 'デフォルト5', type: 'number', step: 0.5, min: 1, max: 10, def: 5, pv: { '1': { max: 100 } } },
+      { key: 'ZiYuanShengMingRatio', label: '採集対象 HP 係数', desc: '岩・木など採集ノードの耐久値係数 (大=何度も叩く必要)', type: 'number', step: 0.1, min: 0.1, max: 3, def: 1, pv: { '1': { max: 10 } } },
       { key: 'CaiJiDamageRatio', label: '採集効率倍率', desc: '採集時にツールが与えるダメージ倍率 (大=少ない打撃で採集完了)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
       { key: 'ZuoWuFeiLiaoXiaoHaoRatio', label: '作物の肥料消費倍率', desc: '作物が肥料を消費する速度', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'ZuoWuShuiXiaoHaoRatio', label: '作物の水消費倍率', desc: '作物が水を消費する速度', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
-      { key: 'ZuoWuXiaoHuiRatio', label: '作物の枯死率倍率', desc: '世話を怠った作物が枯れる速度倍率', type: 'number', step: 0.1, min: 0, max: 10, def: 1 },
-      { key: 'ReDuXiShu', label: '侵略Fever蓄積速度', desc: '侵略を呼び寄せるFever(熱度)ゲージの溜まり速度倍率', type: 'number', step: 0.1, min: 0.1, max: 100, def: 1 },
-      { key: 'YingHuoRanShaoSuDuRatio', label: '焚き火燃焼速度倍率', desc: '焚き火の燃焼速度 (低=長持ち)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
+      { key: 'ZuoWuXiaoHuiRatio', label: '作物の枯死率倍率', desc: '世話を怠った作物が枯れる速度倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
+      { key: 'ReDuXiShu', label: '侵略Fever蓄積速度', desc: '侵略を呼び寄せるFever(熱度)ゲージの溜まり速度倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
+      { key: 'YingHuoRanShaoSuDuRatio', label: '焚き火燃焼速度倍率', desc: '焚き火の燃焼速度 (低=長持ち)', type: 'number', step: 0.1, min: 0, max: 2, def: 1, pv: { '1': { max: 5 } } },
     ]
   },
   {
@@ -1069,7 +1069,7 @@ const CATEGORIES = [
       { key: 'BagRepOptimizeSwitch', label: 'パッケージ同期最適化', desc: 'ON=インベントリ(パッケージ)同期処理を最適化', type: 'switch', def: 1 },
       { key: 'XiuMianDistance', label: '休眠カウントダウン', desc: '部族員(配下)が活動停止して休眠に入るまでのカウントダウン時間', tip: 'デフォルト10000', type: 'number', step: 100, min: 3000, max: 16000, def: 10000 },
       { key: 'HuanXingDistance', label: '覚醒距離', desc: 'プレイヤーがこの距離以内に近づくと部族員が休眠から起動する距離', tip: 'デフォルト9000', type: 'number', step: 100, min: 2000, max: 15100, def: 9000 },
-      { key: 'XiuMianOfflineDays', label: 'オフライン休眠日数', desc: 'プレイヤーがオフラインで建築物が休眠化するまでの日数', type: 'number', step: 1, min: 0, max: 30, def: 7 },
+      { key: 'XiuMianOfflineDays', label: 'オフライン休眠日数', desc: 'プレイヤーがオフラインで建築物が休眠化するまでの日数', type: 'number', step: 1, min: 0, max: 30, def: 7, pv: { '1': { max: 360 } } },
       { key: 'WanJiaZiYuanJinShuaBanJing', label: 'プレイヤー周辺資源スポーン範囲', desc: 'プレイヤー周辺の資源スポーン半径', tip: 'デフォルト1', type: 'number', step: 1, min: 0, max: 100, def: 1 },
       { key: 'WuLiYouHuaDist', label: '物理最適化距離', desc: 'この距離以上の物理演算を間引く', tip: 'デフォルト6666', type: 'number', step: 100, min: 5000, max: 9000, def: 6666 },
       { key: 'TiaoWuLengQueTime', label: 'ダンス クールタイム (時間)', desc: 'ダンス再使用までの待機時間 (単位: ゲーム内時間)', tip: 'デフォルト4', type: 'number', step: 1, min: 0, max: 24, def: 4 },
@@ -1103,7 +1103,7 @@ const CATEGORIES = [
       { key: 'MentalRecoveryRate', label: 'モラル回復速度倍率', desc: 'モラル(士気)ゲージの自動回復速度倍率', type: 'number', step: 0.1, min: 0, max: 10, def: 1 },
       { key: 'PhysicalRecoveryIntervalRate', label: '体力回復間隔倍率', desc: '体力回復の間隔倍率 (低=連続回復)', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
       { key: 'DrawDebugDungeon', label: 'デバッグダンジョン表示', desc: 'ON=デバッグ情報を表示(開発用)', type: 'switch', def: 0 },
-      { key: 'JiaSiHuiFuRatio', label: '速死回復倍率', desc: '瀕死からの回復速度倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1 },
+      { key: 'JiaSiHuiFuRatio', label: '速死回復倍率', desc: '瀕死からの回復速度倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
       { key: 'SpecialEventConfigSwitch', label: 'サーバーイベント調整スイッチ', desc: 'ON=サーバーイベントのカスタム調整を有効化', type: 'switch', def: 0 },
       { key: 'SpecialEventGameDist', label: 'サーバーイベント発生地域設定', desc: 'サーバーイベントの発生地域設定', tip: 'デフォルト0', type: 'number', step: 1, min: 0, max: 2, def: 0 },
       { key: 'SpecialEventAsiaStartTime', label: '特殊イベントアジア開始時間', desc: '', type: 'text', def: '20:00' },
@@ -1131,7 +1131,7 @@ const PRESET_INFO = {
   },
   '1': {
     title: 'プリセット 1 — 専用サーバー実プレイ用係数 ★メイン',
-    text: '公式ホスト・レンタル・自前 Dedicated Server で実際に効く値とされており、<b>サーバー管理者にとっての本命タブ</b>です。<br>このタブだけ変更すれば動作する場合もありますが、念のため 0/2 とも同じ値に揃えるのが安全です。<br>編集前は必ずサーバーを停止してください (起動中編集は上書き消失の報告あり)。'
+    text: '公式ホスト・レンタル・自前 Dedicated Server で実際に効く値とされており、<b>サーバー管理者にとっての本命タブ</b>です。<br><b>重要:</b> プリセット1はプリセット0/2より<b>設定可能な上限が大きく広がります</b> (例: 経験値倍率 5→100、製作スピード 5→1000、動物数 100→1000)。各入力欄の「範囲: ◯〜◯ (プリセット別)」表示はこのタブ専用の値です。<br>編集前は必ずサーバーを停止してください (起動中編集は上書き消失の報告あり)。'
   },
   '2': {
     title: 'プリセット 2 — 用途未公開 (PvP/特殊モード予備枠)',
@@ -1253,7 +1253,22 @@ function buildTabContent(tabId) {
   });
 }
 
+// Resolve effective {min,max,def} for a given preset (tab).
+// Base param.min/max/def = preset "0" (and usually "2"). param.pv holds
+// per-preset overrides, e.g. pv:{ '1':{max:100}, '2':{def:10} }
+function getParamRange(param, tabId) {
+  const r = { min: param.min, max: param.max, def: param.def };
+  if (param.pv && param.pv[tabId]) {
+    const o = param.pv[tabId];
+    if (o.min !== undefined) r.min = o.min;
+    if (o.max !== undefined) r.max = o.max;
+    if (o.def !== undefined) r.def = o.def;
+  }
+  return r;
+}
+
 function buildParamRow(tabId, param) {
+  const rng = getParamRange(param, tabId);
   const row = document.createElement('div');
   row.className = 'param-row';
   row.dataset.key = param.key.toLowerCase();
@@ -1299,7 +1314,7 @@ function buildParamRow(tabId, param) {
     wrap.appendChild(lbl);
 
     // Set default
-    chk.checked = param.def === 1;
+    chk.checked = rng.def === 1;
     lbl.textContent = chk.checked ? 'ON' : 'OFF';
 
     inputWrap.appendChild(wrap);
@@ -1310,9 +1325,9 @@ function buildParamRow(tabId, param) {
     inp.dataset.paramKey = param.key;
     inp.dataset.tabId = tabId;
     if (param.step !== undefined) inp.step = param.step;
-    if (param.min !== undefined) inp.min = param.min;
-    if (param.max !== undefined) inp.max = param.max;
-    inp.value = param.def !== undefined ? param.def : '';
+    if (rng.min !== undefined) inp.min = rng.min;
+    if (rng.max !== undefined) inp.max = rng.max;
+    inp.value = rng.def !== undefined ? rng.def : '';
     inputWrap.appendChild(inp);
     inputEl = inp;
   } else {
@@ -1320,7 +1335,7 @@ function buildParamRow(tabId, param) {
     inp.type = 'text';
     inp.dataset.paramKey = param.key;
     inp.dataset.tabId = tabId;
-    inp.value = param.def !== undefined ? param.def : '';
+    inp.value = rng.def !== undefined ? rng.def : '';
     inputWrap.appendChild(inp);
     inputEl = inp;
   }
@@ -1334,12 +1349,15 @@ function buildParamRow(tabId, param) {
   } else if (param.type === 'text') {
     rangeText = '形式: HH:MM';
   } else {
-    const hasMin = param.min !== undefined;
-    const hasMax = param.max !== undefined;
+    const hasMin = rng.min !== undefined;
+    const hasMax = rng.max !== undefined;
     if (hasMin && hasMax) {
-      rangeText = `範囲: ${param.min} 〜 ${param.max}`;
+      rangeText = `範囲: ${rng.min} 〜 ${rng.max}`;
     } else if (hasMin) {
-      rangeText = `範囲: ${param.min} 以上`;
+      rangeText = `範囲: ${rng.min} 以上`;
+    }
+    if (param.pv && Object.keys(param.pv).length) {
+      rangeText += ' (プリセット別)';
     }
   }
   if (param.tip) {
@@ -1476,7 +1494,8 @@ document.getElementById('resetBtn').addEventListener('click', () => {
       cat.params.forEach(param => {
         const el = reg[param.key];
         if (!el) return;
-        setInputValue(el, param.def !== undefined ? param.def : (param.type === 'switch' ? 0 : ''));
+        const rng = getParamRange(param, tabId);
+        setInputValue(el, rng.def !== undefined ? rng.def : (param.type === 'switch' ? 0 : ''));
       });
     });
   });
