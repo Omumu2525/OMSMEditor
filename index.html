@@ -537,6 +537,76 @@
     opacity: 0.85;
   }
 
+  /* HELP/ABOUT SECTION */
+  .help-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .help-section summary {
+    padding: 12px 18px;
+    cursor: pointer;
+    user-select: none;
+    background: var(--bg-secondary);
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    transition: background 0.15s;
+  }
+  .help-section summary::-webkit-details-marker { display: none; }
+  .help-section summary:hover { background: var(--bg-hover); }
+  .help-section summary::before {
+    content: '▸';
+    color: var(--gold);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .help-section[open] summary::before { transform: rotate(90deg); }
+  .help-section .help-body {
+    padding: 16px 22px 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .help-section h3 {
+    color: var(--gold);
+    font-size: 13px;
+    margin: 14px 0 6px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .help-section h3:first-child { margin-top: 0; }
+  .help-section ol, .help-section ul {
+    padding-left: 22px;
+    margin: 4px 0;
+  }
+  .help-section li { margin-bottom: 4px; }
+  .help-section code {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--gold-light);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: 'Consolas', 'Courier New', monospace;
+  }
+  .help-section .help-note {
+    background: rgba(212,135,10,0.08);
+    border-left: 2px solid var(--amber);
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #e0b878;
+  }
+
   /* COPY BAR (Preset 1 only) */
   .copy-bar {
     background: linear-gradient(135deg, rgba(61,111,206,0.10), rgba(201,162,39,0.10));
@@ -630,6 +700,48 @@
 </div>
 
 <div class="main-container">
+  <details class="help-section" open>
+    <summary>📖 このツールの目的と使い方</summary>
+    <div class="help-body">
+      <h3>🎯 目的</h3>
+      <p>SoulMask 専用サーバー (Dedicated Server) の動作を制御する設定ファイル <code>GameXishu.json</code> を、JSON を直接書き換えることなく Web 画面で安全に編集するためのツールです。経験値倍率、ドロップ率、PvP/PvE 設定、侵略、配下数など 200 以上のパラメータを <b>日本語ラベル・効果説明・推奨値</b> 付きで編集できます。</p>
+
+      <h3>🚀 使い方の流れ</h3>
+      <ol>
+        <li><b>既存設定を読み込む</b>: 右上の「📂 JSONファイルを読み込む」から、サーバーの現在の <code>GameXishu.json</code> を選択
+          <br><span style="font-size:11px;color:var(--text-muted);">パス例: <code>&lt;サーバーフォルダ&gt;\WS\Saved\GameplaySettings\GameXishu.json</code></span>
+        </li>
+        <li><b>値を編集</b>: タブ・カテゴリを開いて各パラメータを変更。各項目には影響説明・範囲・推奨値が表示されます</li>
+        <li><b>0/2 タブへ反映</b>: 推奨は <b>プリセット 1</b> で編集 → 「→ 0/2 両方へ反映 (推奨)」ボタンで全タブを同一値に揃える</li>
+        <li><b>JSONをダウンロード</b>: 右上の「💾 JSONをダウンロード」で <code>GameXishu.json</code> をダウンロード</li>
+        <li><b>サーバーへ反映</b>: <b>サーバーを停止</b> → ダウンロードしたファイルを元の場所に上書き → サーバー再起動</li>
+      </ol>
+
+      <h3>🗂 プリセット 0 / 1 / 2 の使い分け</h3>
+      <ul>
+        <li><b>プリセット 0</b>: ローカル / シングルプレイ用と推測される係数</li>
+        <li><b>プリセット 1 ★メイン</b>: 専用サーバーで実際に効く係数 — まずここを編集</li>
+        <li><b>プリセット 2</b>: 用途未公開 (PvP / 特殊モード予備枠)</li>
+      </ul>
+      <p>3 セクションの正確な使い分けは公式未公開のため、コミュニティ標準では <b>0 / 1 / 2 を同じ値に揃える</b>運用が推奨されています。</p>
+
+      <h3>🔒 プライバシー</h3>
+      <p>編集データはすべて <b>ブラウザ内で完結</b>します。読み込んだファイルもダウンロードする JSON も、外部サーバーには一切送信されません。</p>
+
+      <div class="help-note">
+        ⚠️ <b>注意:</b> サーバー起動中に <code>GameXishu.json</code> を上書きすると、サーバー終了時に古い値で上書きされて編集内容が消えることがあります。<b>必ずサーバーを停止してから</b>ファイルを置き換えてください。
+      </div>
+
+      <h3>❓ よくある質問</h3>
+      <ul>
+        <li><b>編集した値が反映されない</b> → サーバー停止 → ファイル上書き → サーバー起動 の順序を確認してください</li>
+        <li><b>推奨値の根拠は?</b> → コミュニティ Wiki (saraserenity 等) およびレンタルサーバー業者ドキュメントの調査結果に基づいています</li>
+        <li><b>パラメータ名で検索したい</b> → 各タブ上部の 🔍 検索ボックスを使用</li>
+        <li><b>すべてデフォルトに戻したい</b> → 右上の「↺ デフォルト値にリセット」</li>
+      </ul>
+    </div>
+  </details>
+
   <div class="tabs-header" id="tabsHeader">
     <button class="tab-btn" data-tab="0">
       🌐 プリセット0 (全セクション共通)
