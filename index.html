@@ -986,6 +986,7 @@ const CATEGORIES = [
       { key: 'ManageModeRuQin', label: '管理モード侵略有効', desc: 'ON=管理モード時も侵略発生', type: 'switch', def: 0 },
       { key: 'ManageModeRuQinCountDownTimeRatio', label: '管理モード侵略カウントダウン倍率', desc: '管理モードでの侵略カウント倍率', type: 'number', step: 0.1, min: 0, max: 10, def: 1 },
       { key: 'RuQinSucceedPrizeTimes', label: '侵略撃退成功 報酬付与回数', desc: '侵略を撃退成功した時の報酬付与回数', tip: 'デフォルト3', type: 'number', step: 1, min: 1, max: 10, def: 3 },
+      { key: 'ReDuXiShu', label: '侵略Fever蓄積速度', desc: '焚き火周辺で侵略Fever(熱度)が溜まる速度の倍率。Feverが800万到達で次の機会に侵略が発生。大=溜まるのが速い', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
     ]
   },
   {
@@ -1036,7 +1037,6 @@ const CATEGORIES = [
       { key: 'ZuoWuFeiLiaoXiaoHaoRatio', label: '作物の肥料消費倍率', desc: '作物が肥料を消費する速度', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'ZuoWuShuiXiaoHaoRatio', label: '作物の水消費倍率', desc: '作物が水を消費する速度', type: 'number', step: 0.1, min: 0, max: 2, def: 1 },
       { key: 'ZuoWuXiaoHuiRatio', label: '作物の枯死率倍率', desc: '世話を怠った作物が枯れる速度倍率', type: 'number', step: 0.1, min: 0, max: 5, def: 1, pv: { '1': { max: 10 } } },
-      { key: 'ReDuXiShu', label: '侵略Fever蓄積速度', desc: '侵略を呼び寄せるFever(熱度)ゲージの溜まり速度倍率', type: 'number', step: 0.1, min: 0.1, max: 5, def: 1, pv: { '1': { max: 100 } } },
       { key: 'YingHuoRanShaoSuDuRatio', label: '焚き火燃焼速度倍率', desc: '焚き火の燃焼速度 (低=長持ち)', type: 'number', step: 0.1, min: 0, max: 2, def: 1, pv: { '1': { max: 5 } } },
     ]
   },
