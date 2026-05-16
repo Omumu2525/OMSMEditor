@@ -631,11 +631,11 @@
 
 <div class="main-container">
   <div class="tabs-header" id="tabsHeader">
-    <button class="tab-btn active" data-tab="0">
+    <button class="tab-btn" data-tab="0">
       🌐 プリセット0 (全セクション共通)
       <span class="tab-badge" id="badge-0">0</span>
     </button>
-    <button class="tab-btn" data-tab="1">
+    <button class="tab-btn active" data-tab="1">
       ⚙️ プリセット1 (カスタム推奨)
       <span class="tab-badge" id="badge-1">0</span>
     </button>
@@ -647,8 +647,8 @@
 
   <div id="preset-desc" class="preset-info-box"></div>
 
-  <div id="tab-0" class="tab-panel active"></div>
-  <div id="tab-1" class="tab-panel"></div>
+  <div id="tab-0" class="tab-panel"></div>
+  <div id="tab-1" class="tab-panel active"></div>
   <div id="tab-2" class="tab-panel"></div>
 </div>
 
@@ -1425,7 +1425,7 @@ function showToast(type, msg) {
 // INIT
 // =====================================================================
 TABS.forEach(t => buildTabContent(t));
-updatePresetDesc('0');
+updatePresetDesc('1');
 setStatus('idle', 'ファイル未読み込み — JSONファイルを読み込むか、直接値を編集してください');
 </script>
 </body>
